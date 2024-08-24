@@ -1,15 +1,33 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import SplashScreenView from '../views/SplashScreenView.vue'
+import SplashScreenView from "@/views/SplashScreenView.vue";
+import TaskListView from "@/views/TaskListView.vue";
+// import TaskFormView from "@/views/TaskFormView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'SplashScreen',
-      component: SplashScreenView,
+      component: SplashScreenView
     },
-   
+    {
+      path: '/tasks',
+      component: TaskListView,
+    },
+    // {
+    //   path: '/tasks/new',
+    //   component: TaskFormView,
+    // },
+    // {
+    //   path: '/tasks/:id/edit',
+    //   name: 'TaskEdit',
+    //   component: TaskFormView,
+    // },
+    // {
+    //   path: '/tasks/:id',
+    //   name: 'TaskDetail',
+    //   component: TaskDetailView,
+    // },
   ]
 })
 

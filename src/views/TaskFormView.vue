@@ -25,20 +25,20 @@ export default {
   },
   methods: {
     handleSubmit() {
-      this.$router.push({ name: 'TaskList' });
+      this.$router.push({name: 'TaskList'});
     },
     fetchTask() {
       const id = this.$route.params.id;
       if (id) {
         this.isEdit = true;
         apiClient.get(`/tasks/${id}`)
-          .then(response => {
-            this.task = response.data.data;
-          })
-          .catch(error => {
-            alert('Error fetching task: ' + (error.response?.data?.message || error.message));
-            console.error('Error fetching task:', error);
-          });
+            .then(response => {
+              this.task = response.data.data;
+            })
+            .catch(error => {
+              alert('Error fetching task: ' + (error.response?.data?.message || error.message));
+              console.error('Error fetching task:', error);
+            });
       }
     },
   },
