@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SplashScreenView from "@/views/SplashScreenView.vue";
 import TaskListView from "@/views/TaskListView.vue";
+import TaskView from "@/views/TaskView.vue";
 // import TaskFormView from "@/views/TaskFormView.vue";
 
 const router = createRouter({
@@ -13,6 +14,10 @@ const router = createRouter({
     {
       path: '/tasks',
       component: TaskListView,
+    },
+    {
+      path: '/tasks/:id',
+      component: TaskView,
     },
     // {
     //   path: '/tasks/new',
